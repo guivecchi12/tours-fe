@@ -1,0 +1,8 @@
+<div *ngIf="tour$ | async as tour">
+  <div class="cover-image">
+    <img
+      [src]="'http://localhost:3000/img/tours/' + tour.imageCover"
+      [alt]="tour.name"
+    />
+  </div>
+</div>

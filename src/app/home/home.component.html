@@ -1,0 +1,11 @@
+<mat-tab-group>
+  <mat-tab label="Easy" *ngIf="easyTours$ | async as easyTours">
+    <app-tour-card [tours]="easyTours"></app-tour-card>
+  </mat-tab>
+  <mat-tab label="Medium" *ngIf="mediumTours$ | async as mediumTours">
+    <app-tour-card [tours]="mediumTours"></app-tour-card>
+  </mat-tab>
+  <mat-tab label="Difficult" *ngIf="difficultTours$ | async as difficultTours">
+    <app-tour-card [tours]="difficultTours"></app-tour-card>
+  </mat-tab>
+</mat-tab-group>

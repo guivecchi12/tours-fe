@@ -1,0 +1,25 @@
+<div class="card-container">
+  <mat-card class="tour-card" *ngFor="let tour of tours">
+    <mat-card-header>
+      <mat-card-title>{{ tour.name }}</mat-card-title>
+    </mat-card-header>
+    <img
+      mat-card-image
+      [src]="'http://localhost:3000/img/tours/' + tour.imageCover"
+    />
+    <mat-card-content>
+      <p class="tour-summary">{{ tour.summary }}</p>
+    </mat-card-content>
+    <mat-card-actions class="tour-actions">
+      <button
+        mat-button
+        class="mat-raised-button mat-primary"
+        [routerLink]="['/tour', tour._id]"
+      >
+        VIEW TOUR
+      </button>
+
+      <button mat-button class="mat-raised-button mat-accent">EDIT</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
