@@ -1,8 +1,82 @@
-<div *ngIf="tour$ | async as tour">
-  <div class="cover-image">
-    <img
-      [src]="'http://localhost:3000/img/tours/' + tour.imageCover"
-      [alt]="tour.name"
-    />
+<div class="tour" *ngIf="tour$ | async as tour">
+  <div
+    class="cover-image"
+    [ngStyle]="{
+      'background-image':
+        'url(http://localhost:3000/img/tours/' + tour.imageCover + ')'
+    }"
+  ></div>
+  <h1>{{ tour.name }}</h1>
+  <div class="basic-info">
+    <div class="icons">
+      <mat-icon
+        aria-hidden="false"
+        aria-label="tour duration"
+        fontIcon="schedule"
+      />
+      <p>{{ tour.duration }} DAYS</p>
+    </div>
+    <div class="icons">
+      <mat-icon
+        aria-hidden="false"
+        aria-label="tour start location"
+        fontIcon="place"
+      />
+      <p>{{ tour.startLocation.description }}</p>
+    </div>
+  </div>
+  <div class="about">
+    <div class="left">
+      <div class="facts">
+        <h3>Quick Facts</h3>
+        <div class="fact">
+          <mat-icon
+            aria-hidden="false"
+            aria-label="tour start date"
+            fontIcon="event"
+          />
+          <p>Next Date</p>
+          <span>{{ getFirstStartDate(tour.startDates) }}</span>
+        </div>
+        <div class="fact">
+          <mat-icon
+            aria-hidden="false"
+            aria-label="difficulty"
+            fontIcon="trending_up"
+          />
+          <p>difficulty</p>
+          <span class="capitalize">
+            {{ tour.difficulty }}
+          </span>
+        </div>
+        <div class="fact">
+          <mat-icon
+            aria-hidden="false"
+            aria-label="group size"
+            fontIcon="groups"
+          />
+          <p>Max Group Size</p>
+          <span>{{ tour.maxGroupSize }} People</span>
+        </div>
+        <div class="fact">
+          <mat-icon
+            aria-hidden="false"
+            aria-label="rating"
+            fontIcon="star_border"
+          />
+          <p>Rating</p>
+          <span>{{ tour.ratingsAverage }} / 5</span>
+        </div>
+      </div>
+    </div>
+    <div class="right">
+      <h3>About {{ tour.name }}</h3>
+      <p>{{ tour.description }}</p>
+    </div>
+  </div>
+  <div class="images">
+    <div class="image" *ngFor="let image of tour.images">
+      <img [src]="'http://localhost:3000/img/tours/' + image" />
+    </div>
   </div>
 </div>

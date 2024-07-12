@@ -5,11 +5,12 @@ import { CommonModule } from '@angular/common';
 import { TourCardComponent } from '../tour-card/tour-card.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { ToursStore } from '../service/tours.store';
+import { SearchComponent } from '../search/search.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, TourCardComponent, MatTabsModule],
+  imports: [CommonModule, TourCardComponent, MatTabsModule, SearchComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })

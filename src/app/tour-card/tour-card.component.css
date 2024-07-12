@@ -16,6 +16,10 @@
   }
 }
 
+.tour-card img {
+  height: 300px;
+}
+
 .tour-actions {
   display: flex;
   justify-content: center;

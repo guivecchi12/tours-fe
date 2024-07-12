@@ -1,0 +1,22 @@
+.search-history {
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+.title {
+  text-align: center;
+}
+
+.table {
+  border: 1px solid black;
+  width: 50%;
+  margin: auto;
+}
+.history-item {
+  padding: 5px;
+}
+
+.history-item:hover {
+  cursor: pointer;
+  background-color: aliceblue;
+}

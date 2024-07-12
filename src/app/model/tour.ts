@@ -21,9 +21,9 @@ export interface Tour {
   imageCover: string;
   images?: string[];
   createdAt?: number;
-  startDates?: number[];
+  startDates?: string[];
   secretTour?: Boolean;
-  startLocation: Location;
+  startLocation: TourLocation;
   locations?: TourLocation;
   guides?: string[];
   startTime?: number;

@@ -1,0 +1,8 @@
+<div class="search-history" *ngIf="searchHistory$ | async as searchHistory">
+  <h3 class="title" *ngIf="searchHistory.length > 0">Search History</h3>
+  <div class="table" *ngFor="let search of searchHistory">
+    <div class="history-item" (click)="navigateToTour(search.id)">
+      {{ search.name }}
+    </div>
+  </div>
+</div>

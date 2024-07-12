@@ -17,7 +17,6 @@ export class ToursService {
       .pipe(
         map((res) => res['data']),
         catchError((err) => {
-          console.log('We screwed up');
           throw 'error loading tours, Details: ' + err;
         }),
         shareReplay()

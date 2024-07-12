@@ -1,33 +1,23 @@
 .menu {
   background-color: #333;
   color: #fff;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-
-.menu ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  padding: 3px 20px;
   display: flex;
-}
-
-.menu li {
-  margin-right: 20px;
-}
-
-.menu li:last-child {
-  margin-right: 0;
+  align-items: center;
 }
 
 .menu a {
   color: #fff;
   text-decoration: none;
-  padding: 5px 10px;
+  padding: 1px 10px;
   border-radius: 5px;
 }
 
 .menu a:hover {
   background-color: #555;
   cursor: pointer;
+}
+
+.menu .home {
+  margin-top: 5px;
 }

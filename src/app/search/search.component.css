@@ -1,0 +1,55 @@
+.search {
+  width: 50%;
+  margin: 20px;
+  position: relative;
+}
+
+.clearSearch .icon {
+  transform: scale(0.5);
+  color: white;
+  border: 1px solid white;
+  border-radius: 50%;
+  background-color: rgb(197, 31, 31);
+  padding: 5px;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+}
+.clearSearch .icon:hover {
+  color: rgb(197, 31, 31);
+  background-color: white;
+  cursor: pointer;
+}
+
+.search-button {
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+.search-button:hover {
+  background-color: whitesmoke;
+  cursor: pointer;
+}
+
+.result-dropdown {
+  border: 1px solid rgb(148, 120, 86);
+  width: 50%;
+  background-color: bisque;
+  border-radius: 5px;
+  margin: 0 20px;
+  margin-bottom: 50px;
+}
+.list-item {
+  margin-left: 20px;
+  width: 50%;
+}
+.list-item:hover {
+  background-color: azure;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.list-item .item {
+  cursor: pointer;
+}
+.no-results {
+  margin-left: 20px;
+}

@@ -1,0 +1,32 @@
+import { Injectable, OnDestroy, OnInit } from '@angular/core';
+import { BehaviorSubject, Observable, Subject, throwError } from 'rxjs';
+import { catchError, map, takeUntil, tap } from 'rxjs/operators';
+import { TourHistory } from '../model/tourHistory';
+
+const SEARCH_HISTORY = 'search_history';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class SearchStore {
+  private subject = new BehaviorSubject<TourHistory[]>([]);
+
+  searches$: Observable<TourHistory[]> = this.subject.asObservable();
+
+  constructor() {
+    const searches = localStorage.getItem(SEARCH_HISTORY);
+    if (searches) this.subject.next(JSON.parse(searches));
+
+    this.searches$
+      .pipe(
+        map((searches) =>
+          localStorage.setItem(SEARCH_HISTORY, JSON.stringify(searches))
+        )
+      )
+      .subscribe();
+  }
+
+  addSearch(search: TourHistory) {
+    this.subject.next(this.subject.getValue().concat([search])); // array.push
+  }
+}
