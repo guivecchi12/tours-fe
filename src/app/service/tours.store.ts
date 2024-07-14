@@ -19,7 +19,7 @@ export class ToursStore {
 
   private loadAllTours() {
     const loadTours$ = this.http
-      .get<ApiResponse>(`${environment.API_URL}/tours`)
+      .get<ApiResponse>(`${environment.API_URL}${environment.TOURS_ENDPOINT}`)
       .pipe(
         map((response) => response['data']),
         catchError((err) => {

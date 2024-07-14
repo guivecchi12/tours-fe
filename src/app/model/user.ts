@@ -6,3 +6,11 @@ export interface User {
   name: string;
   email: string;
 }
+
+export interface UserLogin {
+  status: 'success' | 'fail';
+  token: string;
+  data: {
+    user: User;
+  };
+}

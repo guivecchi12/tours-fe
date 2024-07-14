@@ -1,0 +1,7 @@
+@if(isLoggedIn$ | async; as isLoggedIn){
+<div>Avatar</div>
+} @else {
+<div>
+  <a routerLink="/login">Log In</a>
+</div>
+}

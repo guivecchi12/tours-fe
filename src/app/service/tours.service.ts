@@ -13,7 +13,9 @@ export class ToursService {
 
   getTourById(tourId: string): Observable<Tour> {
     return this.http
-      .get<{ data: Tour }>(`${environment.API_URL}/tours/${tourId}`)
+      .get<{ data: Tour }>(
+        `${environment.API_URL}${environment.TOURS_ENDPOINT}/${tourId}`
+      )
       .pipe(
         map((res) => res['data']),
         catchError((err) => {
