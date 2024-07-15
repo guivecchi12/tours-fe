@@ -7,7 +7,7 @@ import {
 } from '@angular/forms';
 
 import { Router } from '@angular/router';
-import { AuthStore } from '../service/auth.store';
+import { AuthStore } from '../services/auth.store';
 import { MatCard, MatCardContent, MatCardTitle } from '@angular/material/card';
 import {
   MatFormField,

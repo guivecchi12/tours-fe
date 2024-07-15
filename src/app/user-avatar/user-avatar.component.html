@@ -9,7 +9,7 @@
     "
     alt="user-avatar"
   />
-  @if(isModelOpen){
+  @if(isModelOpen$ | async){
   <app-avatar-modal
     [user]="user"
     (logoutEvent)="logout()"

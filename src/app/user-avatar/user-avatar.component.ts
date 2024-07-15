@@ -1,5 +1,5 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { AuthStore } from '../service/auth.store';
+import { Component, inject, OnInit, Signal } from '@angular/core';
+import { AuthStore } from '../services/auth.store';
 import { BehaviorSubject, map, Observable, of } from 'rxjs';
 import { User } from '../model/user';
 import { CommonModule } from '@angular/common';
@@ -24,7 +24,7 @@ export class UserAvatarComponent implements OnInit {
 
   user$: Observable<User | null>;
   isLoggedIn$: Observable<boolean>;
-  isModelOpen: boolean;
+  isModelOpen$: Observable<boolean> = this.toggleOpen.asObservable();
 
   constructor(private authStore: AuthStore) {}
 
@@ -34,7 +34,7 @@ export class UserAvatarComponent implements OnInit {
   }
 
   openModel() {
-    this.isModelOpen = true;
+    this.toggleOpen.next(true);
   }
 
   logout() {
@@ -43,6 +43,6 @@ export class UserAvatarComponent implements OnInit {
   }
 
   closeModal() {
-    this.isModelOpen = false;
+    this.toggleOpen.next(false);
   }
 }

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
-import { ToursStore } from '../service/tours.store';
+import { ToursStore } from '../services/tours.store';
 import { catchError, map, tap } from 'rxjs/operators';
 import { Tour } from '../model/tour';
 import { Observable } from 'rxjs/internal/Observable';
@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
 import { MatListModule } from '@angular/material/list';
 import { Router } from '@angular/router';
 import { SearchHistoryComponent } from '../search-history/search-history.component';
-import { SearchStore } from '../service/search.store';
+import { SearchStore } from '../services/search.store';
 import { TourHistory } from '../model/tourHistory';
 
 @Component({

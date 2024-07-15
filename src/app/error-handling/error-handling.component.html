@@ -1,0 +1,9 @@
+@if(showErrorMessage){
+<p>Show Error</p>
+@for (error of errors$ | async; track $index) {
+
+<div class="messages-container">
+  <div class="message">{{ error }}</div>
+  <mat-icon class="close" (click)="onClose()">close</mat-icon>
+</div>
+} }

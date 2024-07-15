@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Tour } from '../model/tour';
-import { ToursService } from '../service/tours.service';
+import { ToursService } from '../services/tours.service';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';

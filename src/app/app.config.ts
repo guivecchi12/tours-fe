@@ -10,6 +10,7 @@ import {
 } from '@angular/common/http';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { IMAGE_CONFIG } from '@angular/common';
+import { ErrorHandlingService } from './services/error-handling.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -25,5 +26,6 @@ export const appConfig: ApplicationConfig = {
         disableImageLazyLoadWarning: true,
       },
     },
+    ErrorHandlingService,
   ],
 };

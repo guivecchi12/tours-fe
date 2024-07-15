@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SearchStore } from '../service/search.store';
+import { SearchStore } from '../services/search.store';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { TourHistory } from '../model/tourHistory';
