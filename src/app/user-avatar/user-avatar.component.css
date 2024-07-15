@@ -7,3 +7,15 @@ a {
   margin-right: 20px;
   text-decoration: none;
 }
+
+.user-avatar-container {
+  cursor: pointer;
+  position: relative;
+}
+
+.user-avatar {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  border-radius: 50%;
+}

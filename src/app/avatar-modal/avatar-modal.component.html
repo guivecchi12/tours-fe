@@ -1,0 +1,11 @@
+<div class="modal">
+  <div class="modal-body">
+    <p>{{ user.name }}</p>
+    <mat-icon
+      aria-label="close"
+      fontIcon="cancel"
+      (click)="onClose($event)"
+    ></mat-icon>
+    <button (click)="onLogout($event)">Logout</button>
+  </div>
+</div>
