@@ -15,16 +15,11 @@ export class ErrorHandlingComponent implements OnInit {
   showErrorMessage = false;
   errors$: Observable<string[]>;
 
-  constructor(private errorService: ErrorHandlingService) {
-    console.log('constructor');
-  }
+  constructor(public errorService: ErrorHandlingService) {}
 
   ngOnInit(): void {
     this.errors$ = this.errorService.error$.pipe(
-      tap((errors) => {
-        console.log('Init Error Component', errors);
-        return (this.showErrorMessage = errors && errors.length > 0);
-      })
+      tap(() => (this.showErrorMessage = true))
     );
   }
 

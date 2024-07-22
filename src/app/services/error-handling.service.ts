@@ -9,9 +9,7 @@ export class ErrorHandlingService {
     .asObservable()
     .pipe(filter((messages) => messages && messages.length > 0));
 
-  constructor() {
-    console.log('Service constructor');
-  }
+  constructor() {}
 
   showErrors(...errors: string[]) {
     console.log('adding errors: ', errors);
