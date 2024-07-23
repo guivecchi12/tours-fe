@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { BehaviorSubject, Observable, throwError } from 'rxjs';
 import { catchError, map, shareReplay, tap } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
@@ -8,7 +8,7 @@ import { environment } from '../../environments/environment';
 @Injectable({
   providedIn: 'root',
 })
-export class ToursStore {
+export class ToursStore implements OnDestroy {
   private subject = new BehaviorSubject<Tour[]>([]);
 
   tours$: Observable<Tour[]> = this.subject.asObservable();
@@ -41,5 +41,9 @@ export class ToursStore {
           .sort(sortByDuration)
       )
     );
+  }
+
+  ngOnDestroy(): void {
+    this.subject.next([]);
   }
 }

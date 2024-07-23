@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { SearchStore } from '../services/search.store';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
   templateUrl: './search-history.component.html',
   styleUrl: './search-history.component.css',
 })
-export class SearchHistoryComponent implements OnInit {
+export class SearchHistoryComponent implements OnInit, OnDestroy {
   searchHistory$: Observable<TourHistory[]>;
 
   constructor(private router: Router, private searchStore: SearchStore) {}
@@ -23,5 +23,9 @@ export class SearchHistoryComponent implements OnInit {
   }
   navigateToTour(tourId: string) {
     this.router.navigateByUrl(`/tour/${tourId}`);
+  }
+
+  ngOnDestroy(): void {
+    this.searchHistory$ = new Observable();
   }
 }

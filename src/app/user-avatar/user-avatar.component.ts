@@ -45,4 +45,10 @@ export class UserAvatarComponent implements OnInit {
   closeModal() {
     this.toggleOpen.next(false);
   }
+
+  ngOnDestroy() {
+    this.toggleOpen.next(false);
+    this.user$ = new Observable((user) => user.next(null));
+    this.isLoggedIn$ = new Observable((loggedIn) => loggedIn.next(false));
+  }
 }

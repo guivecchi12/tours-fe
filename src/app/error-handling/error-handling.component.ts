@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ErrorHandlingService } from '../services/error-handling.service';
 import { Observable, tap } from 'rxjs';
 import { MatIcon } from '@angular/material/icon';
@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './error-handling.component.html',
   styleUrl: './error-handling.component.css',
 })
-export class ErrorHandlingComponent implements OnInit {
+export class ErrorHandlingComponent implements OnInit, OnDestroy {
   showErrorMessage = false;
   errors$: Observable<string[]>;
 
@@ -24,6 +24,11 @@ export class ErrorHandlingComponent implements OnInit {
   }
 
   onClose() {
+    this.showErrorMessage = false;
+  }
+
+  ngOnDestroy(): void {
+    this.errors$ = new Observable();
     this.showErrorMessage = false;
   }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { ToursStore } from '../services/tours.store';
@@ -25,7 +25,7 @@ import { TourHistory } from '../model/tourHistory';
   templateUrl: './search.component.html',
   styleUrl: './search.component.css',
 })
-export class SearchComponent {
+export class SearchComponent implements OnDestroy {
   searchResults$: Observable<Tour[]> | undefined;
   constructor(
     private router: Router,
@@ -60,5 +60,9 @@ export class SearchComponent {
 
   private addToSearchHistory(search: TourHistory) {
     this.searchStore.addSearch(search);
+  }
+
+  ngOnDestroy(): void {
+    this.searchResults$ = undefined;
   }
 }

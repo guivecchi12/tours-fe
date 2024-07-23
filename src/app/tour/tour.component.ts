@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Tour } from '../model/tour';
 import { ToursService } from '../services/tours.service';
 import { ActivatedRoute } from '@angular/router';
@@ -13,7 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
   templateUrl: './tour.component.html',
   styleUrl: './tour.component.css',
 })
-export class TourComponent implements OnInit {
+export class TourComponent implements OnInit, OnDestroy {
   tour$: Observable<Tour>;
 
   constructor(
@@ -36,5 +36,9 @@ export class TourComponent implements OnInit {
         });
     }
     return 'No available dates';
+  }
+
+  ngOnDestroy() {
+    this.tour$ = new Observable();
   }
 }
