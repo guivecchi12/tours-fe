@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@angular/core';
-import { BehaviorSubject, map, Observable, shareReplay, tap } from 'rxjs';
+import { BehaviorSubject, map, Observable, tap } from 'rxjs';
 import { User, UserLogin } from '../model/user';
 import { AuthService } from './auth.service';
 import { DOCUMENT } from '@angular/common';

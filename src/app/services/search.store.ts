@@ -1,6 +1,6 @@
-import { Inject, Injectable, OnDestroy, OnInit } from '@angular/core';
-import { BehaviorSubject, Observable, Subject, throwError } from 'rxjs';
-import { catchError, map, takeUntil, tap } from 'rxjs/operators';
+import { Inject, Injectable } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { TourHistory } from '../model/tourHistory';
 import { DOCUMENT } from '@angular/common';
 

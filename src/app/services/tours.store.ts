@@ -1,9 +1,9 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, throwError } from 'rxjs';
 import { catchError, map, shareReplay, tap } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Tour, ApiResponse, sortByDuration } from '../model/tour';
-import { environment } from '../../environments/environment.development';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',

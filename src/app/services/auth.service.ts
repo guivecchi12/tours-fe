@@ -1,9 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from '../../environments/environment.development';
+import { environment } from '../../environments/environment';
 import { UserLogin } from '../model/user';
-import { catchError, shareReplay, throwError } from 'rxjs';
-import { error } from 'console';
+import { catchError, shareReplay } from 'rxjs';
 import { ErrorHandlingService } from './error-handling.service';
 
 @Injectable({
